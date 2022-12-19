@@ -14,7 +14,12 @@ Route::put('/product/edit/{id}',[ProductComponent::class,'editProduct']);
 
 Route::get('/product/delete/{id}', [ProductComponent::class, 'deleteProduct']);
 
-// Routes Users
 
+// Routes Users
 Route::get('/users', [UsersComponent::class, 'render']);
 Route::post('/users/add', [UsersComponent::class, 'create']);
+
+Route::get('/users/delete/{id}', [UsersComponent::class, 'deleteUser']);
+
+Route::get('/users/{id}/edit', [UsersComponent::class, 'getEditDashboard']);
+Route::put('/users/edit/{id}', [UsersComponent::class, 'editUser']);

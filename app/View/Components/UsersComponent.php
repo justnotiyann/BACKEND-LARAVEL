@@ -26,7 +26,6 @@ class UsersComponent extends Component
     public function render()
     {
         $results = DB::table('users')->get();
-
         return view('components.users-component', compact('results'));
     }
 
@@ -39,6 +38,27 @@ class UsersComponent extends Component
         ]);
 
         return back();
+    }
+
+    public function deleteUser($id){
+        DB::table('users')->where('id',$id)->delete($id);
+        return redirect('/users');
+    }
+
+    public function getEditDashboard($id){
+        $result = DB::table('users')->where('id', $id)->first();
+        return view('editUsers',compact('result'));
+    }
+
+    public function editUser(Request $request,$id){
+        DB::table('users')->where('id', $id)->update([
+            'nim' => $request->nim,
+            'nama' => $request->nama,
+            'gender' => $request->gender,
+            'jurusan' => $request->jurusan,
+        ]);
+
+        return redirect('/users');
     }
 
 }
