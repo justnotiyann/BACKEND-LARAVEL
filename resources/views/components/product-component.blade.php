@@ -54,11 +54,14 @@
                             @foreach ($products as $item)
                             <tr>
                                 <td>{{ $item->product }}</td>
-                                <td>{{ $item->country}}</td>
+                                <td>{{ $item->country }}</td>
                                 <td>{{ $item->price }}</td>
                                 <td>
                                     <button class="btn btn-danger">
-                                        <a href="">Delete Data</a>
+                                        <a href="/product/delete/{{ $item->id }}">Delete Data</a>
+                                    </button> ||
+                                    <button class="btn btn-warning">
+                                        <a href="/product/{{ $item->id  }}/edit">Edit Data</a>
                                     </button>
                                 </td>
                             </tr>
