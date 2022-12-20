@@ -2,8 +2,8 @@
 
 namespace App\View\Components;
 
+use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
 class UsersComponent extends Component
@@ -25,12 +25,13 @@ class UsersComponent extends Component
      */
     public function render()
     {
-        $results = DB::table('users')->get();
+        $results = User::get();
+        // $results = User::get();
         return view('components.users-component', compact('results'));
     }
 
     public function create(Request $request){
-        DB::table('users')->insert([
+        User::insert([
             'nim'=>$request->nim,
             'nama'=>$request->nama,
             'gender'=>$request->gender,
@@ -41,17 +42,17 @@ class UsersComponent extends Component
     }
 
     public function deleteUser($id){
-        DB::table('users')->where('id',$id)->delete($id);
+        User::find($id)->delete($id);
         return redirect('/users');
     }
 
     public function getEditDashboard($id){
-        $result = DB::table('users')->where('id', $id)->first();
+        $result = User::find($id)->first();
         return view('editUsers',compact('result'));
     }
 
     public function editUser(Request $request,$id){
-        DB::table('users')->where('id', $id)->update([
+        User::find($id)->update([
             'nim' => $request->nim,
             'nama' => $request->nama,
             'gender' => $request->gender,

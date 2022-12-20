@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
@@ -11,13 +12,13 @@ class ProductComponent extends Component
 {
     public function render()
     {
-        $products = DB::table('products')->get();
+        $products = Product::get();
         return view('components.product-component',compact('products'));
     }
 
 
     public function create(Request $request){
-        DB::table('products')->insert([
+        Product::insert([
             'product'=>$request->product,
             'country'=>$request->country,
             'price'=>$request->price,
@@ -26,13 +27,13 @@ class ProductComponent extends Component
     }
     
     public function getEditDashboard($id){
-        $result = DB::table('products')->where('id', $id)->first();
+        $result = Product::find($id)->first();
         return view('editProduct',compact('result'));
     }
     
 
     public function editProduct(Request $request,$id){
-        DB::table('products')->where('id', $id)->update([
+        Product::find($id)->update([
             'product'=>$request->product,
             'country'=>$request->country,
             'price'=>$request->price,
@@ -42,7 +43,7 @@ class ProductComponent extends Component
     }
 
     public function deleteProduct(Request $req,$id){
-        DB::table('products')->where('id', $id)->delete($id);
+        Product::find($id)->delete($id);
         return redirect('/product');
     }
 }

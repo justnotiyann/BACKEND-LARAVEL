@@ -2,8 +2,8 @@
 
 namespace App\View\Components;
 
+use App\Models\Rental;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\View\Component;
 
 class RentalComponent extends Component
@@ -25,13 +25,13 @@ class RentalComponent extends Component
      */
     public function render()
     {
-        $rentals = DB::table('rentals')->get();
+        $rentals = Rental::get();
         
         return view('components.rental-component',compact('rentals'));
     }
 
     public function create(Request $request){
-        DB::table('rentals')->insert([
+        Rental::insert([
             "nama_peminjam"=>$request->nama_peminjam,
             "jenis_mobil"=>$request->jenis_mobil,
             "tanggal_peminjaman"=>$request->tanggal_peminjaman,
@@ -42,7 +42,7 @@ class RentalComponent extends Component
     }
 
     public function getEditRentalDashboard(Request $request,$id){
-        $rental = DB::table('rentals')->find($id);
+        $rental = Rental::find($id);
         return view('getEditRentalDashboard', compact('rental'));
     }
 }

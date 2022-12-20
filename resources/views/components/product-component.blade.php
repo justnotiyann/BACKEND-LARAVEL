@@ -17,20 +17,20 @@
                 <div class="col-4">
                     <form action="/product" method="POST" autocomplete="off">
                         @csrf
-                        <div class="col">
-                            <label for="product" class="form-label">
+                        <div class="col mb-3">
+                            <label for="product" class="form-label fw-bold">
                                 Masukkan Nama Product
                             </label>
                             <input type="text" required name="product" class="form-control">
                         </div>
-                        <div class="col">
-                            <label for="country" class="form-label">
+                        <div class="col mb-3">
+                            <label for="country" class="form-label fw-bold">
                                 Masukkan Nama asal negara
                             </label>
                             <input type="text" required name="country" class="form-control">
                         </div>
                         <div class="col mb-3">
-                            <label for="price" class="form-label">
+                            <label for="price" class="form-label fw-bold">
                                 Masukkan harga product
                             </label>
                             <input type="text" required name="price" class="form-control">
