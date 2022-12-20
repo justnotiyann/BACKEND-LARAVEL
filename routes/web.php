@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataSekolahController;
 use App\Http\Controllers\renderHomeController;
 use App\View\Components\ProductComponent;
 use App\View\Components\RentalComponent;
@@ -32,3 +33,7 @@ Route::post('/rental/add', [RentalComponent::class, 'create']);
 
 Route::get('/rental/{id}/edit', [RentalComponent::class, 'getEditRentalDashboard']);
 Route::put('/rental/edit/{id}', [RentalComponent::class, 'editRental']);
+
+// Routes Sekolah
+Route::get('/sekolah', [DataSekolahController::class, 'render']);
+Route::post('/sekolah/add', [DataSekolahController::class, 'create']);

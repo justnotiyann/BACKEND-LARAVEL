@@ -15,6 +15,7 @@
         <div class="container" id="section_product">
             <div class="row">
                 <div class="col-4">
+                    <h2 class="">Halaman Tambah Data Product</h2>
                     <form action="/product" method="POST" autocomplete="off">
                         @csrf
                         <div class="col mb-3">
