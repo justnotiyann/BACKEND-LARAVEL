@@ -14,33 +14,33 @@
     <section>
         <div class="container" id="section_product">
             <div class="row">
-                <div class="col-6">
+                <div class="col-4">
                     <form action="/product" method="POST" autocomplete="off">
                         @csrf
                         <div class="col">
                             <label for="product" class="form-label">
                                 Masukkan Nama Product
                             </label>
-                            <input type="text" name="product" class="form-control">
+                            <input type="text" required name="product" class="form-control">
                         </div>
                         <div class="col">
                             <label for="country" class="form-label">
                                 Masukkan Nama asal negara
                             </label>
-                            <input type="text" name="country" class="form-control">
+                            <input type="text" required name="country" class="form-control">
                         </div>
                         <div class="col mb-3">
                             <label for="price" class="form-label">
                                 Masukkan harga product
                             </label>
-                            <input type="text" name="price" class="form-control">
+                            <input type="text" required name="price" class="form-control">
                         </div>
                         <div class="col">
                             <button class="btn btn-success w-100 fw-bold">Buat Data</button>
                         </div>
                     </form>
                 </div>
-                <div class="col-6">
+                <div class="col-8">
                     <table class="table">
                         <thead>
                             <tr>
@@ -59,7 +59,7 @@
                                 <td>
                                     <button class="btn btn-danger">
                                         <a href="/product/delete/{{ $item->id }}">Delete Data</a>
-                                    </button> ||
+                                    </button>
                                     <button class="btn btn-warning">
                                         <a href="/product/{{ $item->id  }}/edit">Edit Data</a>
                                     </button>
