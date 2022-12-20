@@ -20,23 +20,23 @@
                         @csrf
                         <div class="col mb-3">
                             <label for="nim" class="form-label fw-bold">Masukkan NIM</label>
-                            <input type="text" name="nim" class="form-control">
+                            <input type="text" required name="nim" class="form-control">
                         </div>
                         <div class="col mb-3">
                             <label for="nama" class="form-label fw-bold">Masukkan Nama Mahasiswa</label>
-                            <input type="text" name="nama" class="form-control">
+                            <input type="text" required name="nama" class="form-control">
                         </div>
                         <div class="col mb-3">
                             <label for="gender" class="form-label fw-bold">Pilih Gender</label>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" id="laki-laki"
+                                <input class="form-check-input" type="radio" required name="gender" id="laki-laki"
                                     value="laki-laki">
                                 <label class="form-check-label" for="laki-laki">
                                     Laki-Laki
                                 </label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="radio" name="gender" id="perempuan"
+                                <input class="form-check-input" type="radio" required name="gender" id="perempuan"
                                     value="perempuan">
                                 <label class="form-check-label" for="perempuan">
                                     Perempuan

@@ -27,6 +27,7 @@ class Navbar extends Component
             "Home"=>'/',
             "Data Product"=>'/product',
             "Data User"=>'/users',
+            "Data Rental"=>'/rental',
         ];
         return view('components.navbar',compact('navbar'));
     }
