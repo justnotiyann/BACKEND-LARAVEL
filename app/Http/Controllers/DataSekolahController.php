@@ -23,4 +23,10 @@ class DataSekolahController extends Controller
         ]);
         return back();
     }
+
+    public function delete(Request $request,$id){
+        DataSekolah::find($id)->delete();
+
+        return back();
+    }
 }

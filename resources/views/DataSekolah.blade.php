@@ -81,9 +81,9 @@
                                 <td>{{ $data->akreditasi_sekolah}}</td>
                                 <td>{{ $data->jumlah_dosen_sekolah }}</td>
                                 <td>
-                                    <form action="/sekolah/delete/{{ $data->id }}">
+                                    <form action="/sekolah/delete/{{ $data->id }}" method="GET">
                                         @csrf
-                                        @method('delete')
+                                        @method("GET")
                                         <button class="btn btn-danger" type="submit">
                                             Hapus Data
                                         </button>

@@ -37,3 +37,5 @@ Route::put('/rental/edit/{id}', [RentalComponent::class, 'editRental']);
 // Routes Sekolah
 Route::get('/sekolah', [DataSekolahController::class, 'render']);
 Route::post('/sekolah/add', [DataSekolahController::class, 'create']);
+
+Route::get('/sekolah/delete/{id}', [DataSekolahController::class, 'delete']);
