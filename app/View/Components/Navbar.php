@@ -29,6 +29,7 @@ class Navbar extends Component
             "Data User"=>'/users',
             "Data Rental"=>'/rental',
             "Data Sekolah"=>'/sekolah',
+        "Register User"=>'/register',
         ];
         return view('components.navbar',compact('navbar'));
     }

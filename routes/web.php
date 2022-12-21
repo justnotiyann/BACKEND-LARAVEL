@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataSekolahController;
+use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\renderHomeController;
 use App\View\Components\ProductComponent;
 use App\View\Components\RentalComponent;
@@ -39,3 +40,11 @@ Route::get('/sekolah', [DataSekolahController::class, 'render']);
 Route::post('/sekolah/add', [DataSekolahController::class, 'create']);
 
 Route::get('/sekolah/delete/{id}', [DataSekolahController::class, 'delete']);
+
+Route::get('/sekolah/{id}/edit', [DataSekolahController::class, 'renderEdit']);
+Route::put('/sekolah/edit/{id}', [DataSekolahController::class, 'put']);
+
+// routes untuk register user
+
+Route::get('/register', [RegisterController::class, 'render']);
+Route::post('/register/add', [RegisterController::class, 'store']);
