@@ -24,13 +24,14 @@ class Navbar extends Component
     public function render()
     {
         $navbar = [
-            "Home"=>'/',
-            "Data Product"=>'/product',
-            "Data User"=>'/users',
-            "Data Rental"=>'/rental',
-            "Data Sekolah"=>'/sekolah',
-        "Register User"=>'/register',
+            "Home" => '/',
+            "Data Product" => '/product',
+            "Data User" => '/users',
+            "Data Rental" => '/rental',
+            "Data Sekolah" => '/sekolah',
+            "Register User" => '/register',
+            "Quiz Dashboard" => '/quiz',
         ];
-        return view('components.navbar',compact('navbar'));
+        return view('components.navbar', compact('navbar'));
     }
 }

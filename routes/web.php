@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataSekolahController;
+use App\Http\Controllers\QuizController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\renderHomeController;
 use App\View\Components\ProductComponent;
@@ -12,8 +13,8 @@ Route::get('/', renderHomeController::class);
 Route::get('/product', [ProductComponent::class, 'render']);
 Route::post('/product', [ProductComponent::class, 'create']);
 
-Route::get('/product/{id}/edit',[ProductComponent::class,'getEditDashboard']);
-Route::put('/product/edit/{id}',[ProductComponent::class,'editProduct']);
+Route::get('/product/{id}/edit', [ProductComponent::class, 'getEditDashboard']);
+Route::put('/product/edit/{id}', [ProductComponent::class, 'editProduct']);
 
 Route::get('/product/delete/{id}', [ProductComponent::class, 'deleteProduct']);
 
@@ -48,3 +49,14 @@ Route::put('/sekolah/edit/{id}', [DataSekolahController::class, 'put']);
 
 Route::get('/register', [RegisterController::class, 'render']);
 Route::post('/register/add', [RegisterController::class, 'store']);
+
+// routes untuk quiz
+
+Route::get('/quiz', [QuizController::class, 'index']);
+Route::post('/quiz/add', [QuizController::class, 'store']);
+
+
+Route::get('/quiz/{id}/edit', [QuizController::class, 'renderEdit']);
+Route::put('/quiz/edit/{id}', [QuizController::class, 'update']);
+
+Route::get('/quiz/delete/{id}', [QuizController::class, 'destroy']);
